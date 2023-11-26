@@ -1,0 +1,31 @@
+.my-login-form {
+    align-items: center;
+    justify-content: center;
+
+    .my-login-form-login-button {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        transition: all 0.3s;
+
+        &.login-form-invalid {
+            padding-left: 8rem;
+        }
+
+        &.login-form-invalid-2 {
+            padding-right: 8rem;
+        }
+
+        .login-button {
+            background-color: black;
+            color: white;
+        }
+
+    }
+
+    .my-login-form-error-message{
+        small{
+            color:red;
+        }
+    }
+}

@@ -1,0 +1,37 @@
+<div class="flex h-full" *ngIf="true">
+    <div class="w-4/6 h-full">
+        <picture class="h-full">
+            <img class="h-full" src="assets/images/batman.jpg" alt="">
+        </picture>
+    </div>
+    <div class="w-2/6 h-full">
+        <form [formGroup]="loginForm" class="h-full flex flex-col my-login-form">
+            <img class="" width="100" height="100" src="assets/images/batman-icon1.svg" alt="">
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Username</mat-label>
+                    <input formControlName="username" matInput placeholder="Placeholder">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    <mat-error *ngIf="loginForm.controls['username'].hasError('required')">Username Required</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input formControlName="password" matInput placeholder="Password" [type]="hide? 'password': 'text'">
+                    <mat-icon matSuffix (mousedown)="hide = false" (mouseup)="hide = true"
+                        class="cursor-pointer">visibility</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="my-login-form-login-button">
+                <button class="login-button" mat-raised-button (click)="loginClickHandler()">LogIn</button>
+            </div>
+            <div class="my-login-form-error-message">
+                <small>
+                    {{getErrorTextMessage()}}
+                </small>
+            </div>
+        </form>
+    </div>
+
+</div>
